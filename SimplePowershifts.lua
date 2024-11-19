@@ -5,9 +5,6 @@ local DruidLib = AceLibrary("DruidManaLib-1.0")
 local SimplePowershiftsTooltip = CreateFrame("GameTooltip", "SimplePowershiftsTooltip", nil, "GameTooltipTemplate")
 SimplePowershiftsTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 
-if not SPS.PlayerClass == "DRUID" then
-    return;
-end
 
 local subtractMana = 0
 local holder = _G["SimplePowershiftsFrame"]
@@ -21,6 +18,13 @@ neededText:SetFontObject(SPS_CustomFont_AltFont)
 neededText:SetTextColor(0, 0.8, 0.8)
 costText:SetFontObject(SPS_CustomFont_AltFont)
 bg:SetDesaturated(false)
+
+if SPS.PlayerClass == "DRUID" then
+    holder:Show()
+else
+    holder:Hide()
+    holder:UnregisterAllEvents()
+end
 
 
 local function GetShapeshiftCost()
