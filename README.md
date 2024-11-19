@@ -1,7 +1,7 @@
 # SimplePowershifts
 
-<img src="Media/Display.jpg" float="right" align="right">
 <img src="Media/DisplayOOM.jpg" float="right" align="right">
+<img src="Media/Display.jpg" float="right" align="right">
 
 > **A simple addon for World of Warcraft 1.12.1 showing druid powershift information.**
 
