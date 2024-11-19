@@ -8,7 +8,7 @@
 The goal is Simple... Keep it simple man. Life to short to make things complicated.
 
 ## Installation
-1. Download **[Latest Version](https://github.com/Beardedrasta/SimpleBars/archive/refs/heads/main.zip)**
+1. Download **[Latest Version](https://github.com/Beardedrasta/SimplePowershifts/archive/refs/heads/master.zip)**
 2. Unpack the Zip file
 3. Rename the folder "SimplePowershifts-main" to "SimplePowershifts"
 4. Copy "SimplePowershifts" into WoW\Inteface\AddOns
