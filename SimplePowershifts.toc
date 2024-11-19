@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: SimplePowershifts
+## Notes: Shows how many shift casts left, mana needed to cast again. *This was Lexie's idea, I just put it together*
+## OptionalDeps: Ace2, DruidLib
+
+## Author: Rasta
+## Version: 1.0.0
+
+## SavedVariables: SPS_DB
+
+Libs\AceLibrary\AceLibrary.lua
+Libs\AceOO-2.0\AceOO-2.0.lua
+Libs\AceEvent-2.0\AceEvent-2.0.lua
+Libs\DruidManaLib-1.0\DruidManaLib-1.0.lua
+Data\Init.lua
+
+SimplePowershifts.xml

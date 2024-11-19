@@ -1,0 +1,126 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
+
+
+    <Button name="SimplePowershiftsFrame" parent="UIParent" movable="true" enableMouse="true" topLevel="true">
+        <Size>
+            <AbsDimension x="40" y="40"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER">
+                <Offset>
+                    <AbsDimension x="-150" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="SimplePowershiftsBear" file="Interface\Icons\Ability_Racial_BearForm">
+                    <Size>
+                        <AbsDimension x="40" y="40"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <FontString name="SimplePowershifts_Casts" text="" inherits="GameFontNormal">
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+            <Layer level="ARTWORK">
+                <FontString name="SimplePowershifts_ManaNeeded" text="" inherits="GameFontNormal">
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="-3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+            <Layer level="ARTWORK">
+                <FontString name="SimplePowershifts_FormCost" text="" inherits="GameFontNormal">
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="SimplePowershiftsBorder" hidden="false">
+                <Size>
+                    <AbsDimension x="43" y="43"/>  <!-- Set the size of the frame -->
+                </Size>
+                <Anchors>
+                    <Anchor point="CENTER">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Backdrop edgeFile="Interface\AddOns\SimplePowershifts\Media\Caith.tga">
+                    <EdgeSize>
+                        <AbsValue val="14"/>
+                    </EdgeSize>
+                    <TileSize>
+                        <AbsValue val="32"/>
+                    </TileSize>
+                    <Insets>
+                        <AbsInset left="5" right="5" top="5" bottom="5"/>
+                    </Insets>
+                    <BorderColor r="1" g="1" b="1" a="1"/>
+                </Backdrop>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                this:RegisterEvent("UNIT_MANA")
+                this:RegisterEvent("UNIT_DISPLAYPOWER")
+                this:RegisterEvent("PLAYER_ENTERING_WORLD")
+                this:RegisterEvent("PLAYER_AURAS_CHANGED")
+                this:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
+                this:RegisterEvent("SPELLCAST_STOP")
+                this:RegisterForDrag("LeftButton")
+            </OnLoad>
+            <OnEvent>
+                SPS_OnEvent(event)
+            </OnEvent>
+            <OnDragStart>
+                if IsShiftKeyDown() then
+                    SimplePowershiftsFrame:StartMoving()
+                end
+            </OnDragStart>
+            <OnDragStop>
+                SimplePowershiftsFrame:StopMovingOrSizing()
+                local point, relativeTo, relativePoint, xOfs, yOfs = SimplePowershiftsFrame:GetPoint()
+                SPS_DB.point = point
+                SPS_DB.relativePoint = relativePoint
+                SPS_DB.x = xOfs
+                SPS_DB.y = yOfs
+            </OnDragStop>
+            <OnEnter>
+                SPS_MouseEnter()
+            </OnEnter>
+            <OnLeave>
+                SPS_MouseLeave()
+            </OnLeave>
+        </Scripts>
+    </Button>
+
+    <Script file="SimplePowershifts.lua"/>
+</Ui>
