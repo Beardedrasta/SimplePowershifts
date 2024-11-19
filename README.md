@@ -3,7 +3,7 @@
 <img src="Media/DisplayOOM.jpg" float="right" align="right">
 <img src="Media/Display.jpg" float="right" align="right">
 
-> **A simple addon for World of Warcraft 1.12.1 showing druid powershift information.**
+> **A simple addon for World of Warcraft 1.12.1 showing druid powershift information. This project idea came from Lexie @ Turtle WoW**
 
 The goal is Simple... Keep it simple man. Life to short to make things complicated.
 
