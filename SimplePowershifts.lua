@@ -98,9 +98,9 @@ end)
 local function ToggleLock()
     SPS_DB.lock = not SPS_DB.lock
     if SPS_DB.lock == true then
-        holder:SetMovable(false)
+        holder:EnableMouse(false)
     else
-        holder:SetMovable(true)
+        holder:EnableMouse(true)
     end
 end
 
@@ -136,9 +136,9 @@ local function UpdateVisibility()
     end
 
     if SPS_DB.lock == true then
-        holder:SetMovable(false)
+        holder:EnableMouse(false)
     else
-        holder:SetMovable(true)
+        holder:EnableMouse(true)
     end
 end
 
