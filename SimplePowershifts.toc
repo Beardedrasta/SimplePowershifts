@@ -1,7 +1,6 @@
 ## Interface: 11200
 ## Title: SimplePowershifts
 ## Notes: Shows how many shift casts left, mana needed to cast again. *This was Lexie's idea, I just put it together*
-## OptionalDeps: Ace2, DruidLib
 
 ## Author: Rasta
 ## Version: 1.0.0
